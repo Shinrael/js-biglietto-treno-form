@@ -45,3 +45,9 @@ if (selectAge.value === 'young'){
 finalContainer.classList.toggle('d-none');
 
 })
+
+cancel.addEventListener('click', function(){
+  name.value = '';
+  km.value = '';
+  selectAge.value = 'Fascia d\'Età';
+})
