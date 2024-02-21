@@ -3,7 +3,7 @@
 const rate = 0.21
 const name = document.querySelector('.name-lastname');
 const km = document.querySelector('.kilometers');
-let price = rate * km;
+
 const selectAge = document.querySelector('.select-age');
 const nameTicket = document.querySelector('.name-t')
 const offerTicket = document.querySelector('.ticket-t')
@@ -28,16 +28,18 @@ console.log(name.value);
 nameTicket.innerHTML = name.value;
 console.log(km.value);
 console.log(selectAge.value);
+const distance = parseFloat(km.value);
+const price = rate * distance;
 console.log(price);
 if (selectAge.value === 'young'){
   offerTicket.innerHTML = youngTicket
-  priceTicket.innerHTML = price * 0.2;
+  priceTicket.innerHTML = '€ ' + (price - (price * 0.2)).toFixed(2);
 } else if(selectAge.value === 'adult') {
   offerTicket.innerHTML = adultTicket
-  priceTicket.innerHTML = price;
+  priceTicket.innerHTML = '€ ' + price.toFixed(2);
 } else if(selectAge.value === 'over65') {
   offerTicket.innerHTML = olderTicket
-  priceTicket.innerHTML = price * 0.4;
+  priceTicket.innerHTML = '€ ' + (price - (price * 0.4)).toFixed(2);
 }
 
 finalContainer.classList.toggle('d-none');
